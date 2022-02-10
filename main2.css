@@ -1,1 +1,176 @@
 
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	font-family: 'Train One', cursive;
+
+}
+html,body,section{
+	height: 100%;
+	display: grid;
+	background-color: #000;
+	max-height: 1080px;
+
+}
+.my-text_css{
+	color: white;
+	font-size: 15px;
+	margin: 15px;
+	letter-spacing: 3px;
+	height: 100%;
+}
+
+section{
+	background-color: black;
+	color: white;
+	font-size: 32px;
+	height: 100%;
+}
+.first {
+	height: 50%;
+	padding: 15px;
+	background: linear-gradient(#041C32, #121212) fixed;
+
+
+}
+.second {
+	height: 50%;
+
+	background: url(5.gif) no-repeat 5px 130px;
+	background-color: #5D8233
+}
+textarea{
+	background-color: purple;
+	border-radius: 5px;
+	height: 200px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    color: white;
+    padding: 15px;
+   	box-shadow: 0 0 10px 1px #ff00ff;
+   	transition: 0.4s;
+
+}
+textarea:hover{
+	box-shadow: 0 0 20px 1px #ff00ff;
+}
+.bt1{
+	background-color: purple;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	margin-top: 20px;
+	width: 455px;
+	margin-left: 23px;
+   	box-shadow: 0 0 10px 1px #ff00ff;
+   	transition: 0.4s;
+
+}
+.bt1:hover{
+	background-color: #ff00ff;
+	box-shadow: 0 0 50px 1px #ff00ff;
+}
+.text_div{
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    margin: -125px 0 0 -125px;
+
+}
+.screen1{
+    width: 333px;
+    height: 222px;
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    margin: -125px 0 0 -125px;
+    border-radius: 20px;
+    transition: 1s;
+    display: block;
+    box-shadow: 0 0 5px 1px #ff00ff;
+}
+.screen1:hover{
+	transform: scale(1.8);
+	border-radius:10px;
+	box-shadow: 0 0 300px 1px #ff00ff;
+}
+.screen2{
+	width: auto;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    margin: -125px 0 0 -125px;
+    border-radius: 20px;
+
+}
+.my-text2_css{
+	color: white;
+	margin-left: 300px;
+	padding: 30px;
+}
+.third{
+	height: 50%;
+
+}
+.game{
+	height: 40%;
+	background: url(3.gif) no-repeat 0px 0px;
+}
+.game_descr{
+	color: white;
+	padding: 15px;
+	letter-spacing: 3px;
+	text-align: center;
+}
+.contacts{
+	color: white;
+}
+.scr{
+	width: auto;
+	height: auto;
+	margin-top: 150px;
+}
+.sc1{
+	padding-left: 100px;
+	width: 30%;
+	height: 30%;
+	transition: 1s;
+}
+.sc1:hover{
+	width: 50%;
+	height: 50%;
+	transform: scale(1.1);
+}
+.sc2{
+	padding-left: 100px;
+	width: 10%;
+	height: 10%;
+	transition: 1s;
+}
+.sc2:hover{
+	width: 50%;
+	height: 50%;
+	transform: scale(1.1);
+}
+.contacts{
+	text-align: center;
+	margin: 50px;
+	border: solid;
+	border-color: red;
+	font-size: 12px;
+	padding: 15px;
+	border-radius: 50px;
+}
+.vk{
+	text-decoration: none;
+	color: white;
+}
