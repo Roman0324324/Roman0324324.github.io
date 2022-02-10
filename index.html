@@ -1,1 +1,231 @@
-site
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="main2.css">
+	<link rel="stylesheet" type="text/css" href="h1.css">
+	<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="ball.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>JS</title>
+	<script src="https://js.cx/libs/animate.js"></script>
+	<script src="script.js"></script>
+
+</head>
+<body>
+	<style>
+
+		#topnav{
+			overflow: hidden;
+			background-color: #333;
+		}
+
+		#topnav a{
+			float: left;
+			padding: 15px 17px;
+			color: #eee;
+			text-align: center;
+			text-decoration: none;
+			font-size: medium;
+		}
+
+		#topnav a:hover{
+			background-color: #ff00ff;
+			color: #000;
+		}
+
+		#topnav a.active{
+			background-color: #8b008b;
+			color: #eee;
+		}
+
+		#title{
+			padding-left: 16px;
+			font-size: 15px;
+			text-align: right;
+			padding-top: 15px;
+			padding-right: 30px;
+		}
+	</style>
+	
+		
+
+<main>
+	<div class="container first">
+			<header id="head">
+				<nav id="topnav">
+					<a href="#home сорри, всё ещё находится в разработке" class="active">HOME</a>
+					<a href="#news сорри, всё ещё находится в разработке">News</a>
+					<a href="#contacts сорри, всё ещё находится в разработке">Contacts</a>
+					<a href="#about сорри, всё ещё находится в разработке">About</a>
+					<h1 id="title">Java Script, CSS и их возможности при адаптивной верстке.</h1>
+				</nav>
+			</header>
+		<!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
+		<div id="my-text" class="my-text_css">
+			Всем доброго времени суток!<br><br> Данный сайт разработал студент второго курса ИСвГС Института Иностранных Языков и Международного Туризма Осадчий Роман.<br><br> Рад, что заглянули на мою HTML страничку.<br><br> Здесь я буду публиковать различные интересные анимации на JavaScript и Css. <br><br>
+			Анимация набора текста, реализованная при помощи JS уже у вас на экране. <br><br>Вы можете ввести свой текст в окно ниже и посмотреть, как он будет напечатан.  <br><br> </div>
+		<!-- ниже скрипт для текста сверху -->
+		<script>
+			function printText( el ){
+
+				let letterTimeout = 20
+
+				let text = el.innerHTML
+				let i = 1
+
+				let print__fn = function(){
+
+						if( i <= text.length ){
+							el.innerHTML = text.substr( 0, i );
+							setTimeout( arguments.callee, letterTimeout );
+						}
+
+						i++;
+					}
+
+				print__fn() // init
+			};
+
+	
+			let el = document.getElementById( 'my-text' )
+			printText( el );
+		</script>
+			<!-- конец -->
+			<div class="text_div"><textarea id="textExample" rows="5" cols="60">Кофе делает тонус, глаза делают взгляд 
+
+Блендер делает смузи, кобры делают яд
+
+Робот делает роботов, хиппи делают love
+
+Блендер делает смузи, пёсик делает "гав"</textarea> 
+
+			  		<button class="bt1" onclick="animateText(textExample)">Запустить анимацию набора текста!</button>
+			</div>
+			<img src="screen1.jpg" class="screen1">
+
+			  <script>
+			    function animateText(textArea) {
+			      let text = textArea.value;
+			      let to = text.length,
+			        from = 0;
+
+			      animate({
+			        duration: 5000,
+			        timing: bounce,
+			        draw: function(progress) {
+			          let result = (to - from) * progress + from;
+			          textArea.value = text.substr(0, Math.ceil(result))
+			        }
+			      });
+			    }
+
+
+			    function bounce(timeFraction) {
+			      for (let a = 0, b = 1; 1; a += b, b /= 2) {
+			        if (timeFraction >= (7 - 4 * a) / 11) {
+			          return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+			        }
+			      }
+			    }
+			  </script>
+	</div>
+		<div class="container second">
+			<div id="field">
+    		<img src="https://js.cx/clipart/ball.svg" width="80" height="80" id="ball">
+    				<div id="myy-text2" class="my-text2_css">
+		Кликните по мячу и он начнёт движение<br><br>Основные инструменты JS для такой анимации: <br><br>1) bounce в режиме easeOut. <br><br> 
+
+		2) функция animate. <br><br>3) функция makeEaseOut(quad).  <br><br> 
+
+		</div>
+<!-- ниже скрипт для текста сверху -->
+		<script>
+			function printText( ele ){
+
+				let letterTimeout = 20
+
+				let text = ele.innerHTML
+				let i = 1
+
+				let print__fn = function(){
+
+						if( i <= text.length ){
+							ele.innerHTML = text.substr( 0, i );
+							setTimeout( arguments.callee, letterTimeout );
+						}
+
+						i++;
+					}
+
+				print__fn() // init
+			};
+
+	
+			let ele = document.getElementById( 'my-text2' )
+			printText( ele );
+		</script>
+    		<img src="screen2.jpg" class="screen2">
+  		</div>
+
+  <script>
+    function makeEaseOut(timing) {
+      return function(timeFraction) {
+        return 1 - timing(1 - timeFraction);
+      }
+    }
+
+    function bounce(timeFraction) {
+      for (let a = 0, b = 1, result; 1; a += b, b /= 2) {
+        if (timeFraction >= (7 - 4 * a) / 11) {
+          return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+        }
+      }
+    }
+
+    function quad(timeFraction) {
+      return Math.pow(timeFraction, 2);
+    }
+
+    ball.onclick = function() {
+
+      let height = field.clientHeight - ball.clientHeight;
+      let width = 600;
+
+      animate({
+        duration: 2000,
+        timing: makeEaseOut(bounce),
+        draw: function(progress) {
+          ball.style.top = height * progress + 'px'
+        }
+      });
+
+      animate({
+        duration: 2000,
+        timing: makeEaseOut(quad),
+        draw: function(progress) {
+          ball.style.left = width * progress + "px"
+        }
+      });
+    }
+  </script>
+
+
+		</div>
+		<div class="container third">
+			<div class = "game_descr">Представляю вашему вниманию самый простой coockie кликер.<br><br> Цель игры - заработать как можно больше очков, совершая клики по печеньке. <br><br> Вы можете улучшать клики - одно улучшение = +1 клик.<br><br> Но будьте внимательны, улучшение платное!</div>
+				<div class="game">
+					<div class="score_css" ><span id="score">0</span> <span>печенек</span></div>
+					<img class="img" id="coockie" src="img1.png" onclick="cl()">
+					<button class="button_css" type="button" onclick="upgreat()"><Улучшение клика><span> нужно: </span><span id="up">10</span></button>
+				</div>
+			<div class="scr">
+				<img class="sc1" src="sc3.jpg">
+				<img class="sc2" src="sc4.jpg">
+			</div>
+			<div class="contacts"><a href="https://vk.com/id334319419" class="vk">ВК создателя</a></div>
+		</div>
+</main>
+</body>
+</html>
